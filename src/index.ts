@@ -19,6 +19,7 @@ const cli = async () => {
     console.error(red('请选择歌曲'))
     process.exit(1)
   }
+  console.log("logger-[songs]", songs);
   await download(songs)
 }
 

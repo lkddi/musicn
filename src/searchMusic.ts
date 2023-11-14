@@ -33,6 +33,13 @@ const searchMusic = async ({ text, options }: SongInfo) => {
     }
 
     const spinner = ora(cyan('搜索ing')).start()
+    console.log("logger-[service]", service);
+    console.log({
+      text,
+      pageNum,
+      pageSize,
+      songListId,
+    })
     const { searchSongs, totalSongCount } = await search[service]({
       text,
       pageNum,
