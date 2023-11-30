@@ -32,7 +32,7 @@ const multiBar = new cliProgress.MultiBar({
 
 const downloadSong = (song: SongInfo, index: number) => {
   let { songName, songDownloadUrl, lyricDownloadUrl, songSize, options } = song
-  const { lyric: withLyric = false, path: targetDir = process.cwd(), service } = options
+  const { lyric: withLyric = false, path: targetDir = './data', service } = options
   return new Promise<boolean>(async (resolve) => {
     // 防止因歌曲名重名导致下载时被覆盖
     if (songNameMap.has(songName)) {

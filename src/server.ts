@@ -40,6 +40,16 @@ router.post('/musicn/download', async (ctx: any) => {
   }
 })
 
+router.post('/musicn/download-one', async (ctx: any) => {
+  const body: any = ctx.request.body;
+  try {
+    await download([body])
+    ctx.body = { code: 0, msg: '成功', data: []}
+  } catch (e) {
+  console.log("logger-[e]", e);
+    ctx.body = { code: 0, msg: '失败', data: e}
+  }
+})
 /**
  * server
  *
